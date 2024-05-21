@@ -1,6 +1,7 @@
 import "../../scss/index.scss"
 import "../../scss/mainPage/MainPage.scss"
 import "../../scss/navigatioBar/NavigationBar.scss"
+import "../../scss/authPage/AuthPage.scss"
 import { MainPage } from "../mainPage/MainPage"
 import { NavigationBar } from "../navigationBar/NavigationBar"
 

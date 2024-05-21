@@ -1,3 +1,6 @@
+import { AuthPage } from "../authPage/AuthPage"
+import { Auth } from "../fetch/api/auth/Auth"
+
 export class NavigationBar {
     public create() {
         const body = document.body
@@ -58,7 +61,11 @@ export class NavigationBar {
         type Button = [string, Function]
 
         const button: Button[] = [
-            ["Login", function () { console.log("Login") }],
+            ["Login", async function () {
+
+                const authPage = new AuthPage()
+                authPage.createAuthPage("login")
+            }],
             ["Sign Up", function () { console.log("Sign Up") }]
         ]
 
