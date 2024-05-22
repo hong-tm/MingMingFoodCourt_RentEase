@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+
+# TypeScript
+*.tsbuildinfo
+*.js
+*.js.map
+
+# Json
+*.json
+
+# Compiled output
+dist/
+
+# Exclude webpack config
+!webpack.config.js
+
+# Avatar Folder
+server/Avatars/*
+!server/Avatars/1.png
+
+# Test Folder
+test/*

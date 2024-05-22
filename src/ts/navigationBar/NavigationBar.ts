@@ -16,7 +16,7 @@ export class NavigationBar {
             const button = document.createElement("div")
             button.innerHTML = btitle
             button.onclick = () => bfunction()
-            button.classList.add("rightNavButton")
+            button.classList.add("nav_left_button")
             return button
         }
 
@@ -25,26 +25,27 @@ export class NavigationBar {
         const logo = document.createElement("img")
         logo.src = "https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Mountain-logo-Design-Graphics-9785421-1-1-580x435.png"
         logo.alt = "Logo"
-        logo.classList.add("leftNavlogo")
+        logo.classList.add("nav_left_logo")
         logo.innerHTML = "Ming Ming Food Court"
         leftNav.appendChild(logo)
 
         const title = document.createElement("div")
         title.innerHTML = "Ming Ming Food Court"
-        title.classList.add("leftnavTitle")
+        title.classList.add("nav_left_title")
         leftNav.appendChild(title)
 
         type Button = [string, Function]
 
         const button: Button[] = [
-            ["Dashboard", function () { console.log("Dashboard") }]
+            ["Dashboard", function () { console.log("Dashboard") }],
+            
         ]
 
         button.forEach((t) => {
             leftNav.appendChild(leftNavButton(t[0], t[1]))
         })
 
-        leftNav.classList.add("leftNav")
+        leftNav.classList.add("nav_left")
         return leftNav
     }
 
@@ -53,7 +54,7 @@ export class NavigationBar {
             const button = document.createElement("div")
             button.innerHTML = btitle
             button.onclick = () => bfunction()
-            button.classList.add("rightNavButton")
+            button.classList.add("nav_right_button")
             return button
         }
         const rightNav = document.createElement("div")
@@ -74,7 +75,7 @@ export class NavigationBar {
         })
 
 
-        rightNav.classList.add("rightNav")
+        rightNav.classList.add("nav_right")
         return rightNav
     }
 }
