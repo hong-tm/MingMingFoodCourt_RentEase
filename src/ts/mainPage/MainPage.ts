@@ -1,3 +1,5 @@
+import { CreateMD } from "../createMD/CreateMD"
+
 export class MainPage {
     public create() {
         const body = document.body
@@ -6,6 +8,9 @@ export class MainPage {
         const title = document.createElement("div")
         title.innerHTML = "Hello World"
         title.classList.add("bodyTitle")
+        
         body.appendChild(title)
     }
+
+    
 }

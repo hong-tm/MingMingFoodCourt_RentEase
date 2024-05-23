@@ -1,74 +1,79 @@
-$light-gray: #e3e3e3;
-$button_padding: 8px 20px;
-$button_radius: 1.5rem;
-$button_hover_color: #4e4d4d;
+$button-padding: 8px 20px;
+$button-radius: 6px;
+$button-hover-color: #f6f7f9;
+$font-size-normal: 14px;
+$font-color: #0d121c;
 
 .nav {
     display: flex;
     justify-content: space-between;
+    text-align: start;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 32px;
     background-color: white;
-    color: #000000;
-    font-size: 20px;
-    height: 60px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: $font-color;
+    font-size: $font-size-normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    height: 64px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     user-select: none;
-
 
     &_left {
         display: flex;
         align-items: center;
+        text-decoration: none;
+        cursor: pointer;
 
         &_logo {
-            width: 80px;
+            width: 58px;
             height: auto;
-            text-decoration: none;
-            cursor: pointer;
+            background-blend-mode: color-burn;
+
         }
 
-        &_title {
-            margin-left: 10px;
-            padding-right: 30px;
-            font-weight: bold;
-        }
-
-        &_button{
+        &_button {
             color: #000000;
-            padding: $button_padding;
-            border-radius: $button_radius;
+            padding: 8 12px;
+            padding: $button-padding;
+            border-radius: $button-radius;
             margin: 0 5px;
-            font-size: 18px;
-            text-decoration: none;
-            cursor: pointer;
-            
-            &:hover {
-                background-color: $button_hover_color;
-                color: #e2dede;
-            }
+        }
+
+        &_button:hover {
+            color: black;
         }
     }
 
     &_right {
         display: flex;
-        padding: 5px;
-        
-        &_button {
-            color: #000000;
-            padding: $button_padding;
-            border-radius: $button_radius;
-            border: 2px solid $light-gray;
-            margin: 0 5px;
-            text-decoration: none;
-            max-width: 70%;
-            cursor: pointer;
+        justify-content: space-between;
+        text-align: start;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
 
+        &_button {
+            padding: $button-padding;
+            border-radius: $button-radius;
+            margin: 0 5px;
+            max-width: 70%;
 
             &:hover {
-                background-color: $button_hover_color;
-                color: #e2dede;
+                background-color: $button-hover-color;
+                color: #2c682c;
+            }
+        }
+
+        &_icon {
+            padding: 8 10px;
+            border-radius: $button-radius;
+            vertical-align: -11.5%;
+
+            &:hover {
+                color: #5f682c;
+                background-color: #f8f9f6;
             }
         }
     }
-
 }

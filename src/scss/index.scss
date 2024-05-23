@@ -1,17 +1,19 @@
-$primary-color: #f1dbdb;
-
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url('../../public/font/Roboto.ttf') format('ttf');
+    font-family: 'OpenSans', sans-serif;
+    src: url('../scss/font/OpenSans.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 body{
-    background-color: $primary-color;
+    background-color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
+}
+
+*{
+    box-sizing: border-box;
 }
