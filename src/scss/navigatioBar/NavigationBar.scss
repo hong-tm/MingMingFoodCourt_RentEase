@@ -69,10 +69,12 @@ $font-color: #0d121c;
             padding: 8 10px;
             border-radius: $button-radius;
             vertical-align: -11.5%;
+            color: #7e7d38;
+            font-variation-settings: 'fill' 1'wght' 400, 'GRAD' 0, 'opsz' 48 !important;
 
             &:hover {
-                color: #5f682c;
-                background-color: #f8f9f6;
+                color: #62682c;
+                background-color: #f9f9f6;
             }
         }
     }

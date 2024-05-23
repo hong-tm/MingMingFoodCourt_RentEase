@@ -26,7 +26,7 @@ export class AuthPage {
             registerForm_input.placeholder = name
             registerForm_input.required = true
             registerForm_input.classList.add("registerForm_Input")
-            
+
             if (required === 0) {
                 registerForm_input.style.display = "none"
             }

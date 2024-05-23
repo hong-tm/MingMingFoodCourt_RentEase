@@ -38,7 +38,7 @@ export class NavigationBar {
             ["Stall", function () { console.log("Stall") }],
             ["Payment", function () { console.log("Payment") }],
             ["Data Exportation", function () { console.log("Data Exportation") }]
-            
+
 
         ]
 
@@ -51,7 +51,10 @@ export class NavigationBar {
     }
 
     private rightNavContent() {
-        function rightNavButton(btitle: string, bfunction: () => void, iconPath?: string) {
+
+        let isE7f7: boolean = false;
+        
+        function rightNavButton(btitle: string, bfunction: () => void) {
             const button = document.createElement("div")
 
             button.innerHTML = btitle;
@@ -62,9 +65,12 @@ export class NavigationBar {
         }
         const rightNav = document.createElement("div")
 
-        const createMD = new CreateMD()
-        const md = createMD.getmd("e7f4", "nav_right_icon")
-        rightNav.appendChild(md)
+        function rightNavIcon(ititle: string, iconClass: string, ifunction: (md: HTMLDivElement) => void){
+            const createMD = new CreateMD()
+            const md = createMD.getmd(ititle, iconClass)
+            md.onclick = () => ifunction(md)
+            return md
+        }
 
         type Button = [string, () => void, string?];
 
@@ -80,9 +86,25 @@ export class NavigationBar {
                 authPage.createAuthPage("Sign Up")
             }]
         ]
+        
+        type Icon = [string, string, (md: HTMLDivElement) => void]
+
+        const icon: Icon[] = [
+            ["e7f4", "nav_right_icon", function (md: HTMLDivElement) {
+                isE7f7 = !isE7f7
+                
+                md.innerHTML = isE7f7 ? "&#xe7f7;" : "&#xe7f4;";
+
+            }],
+        ]
+
+
+        icon.forEach((t) => {
+            rightNav.appendChild(rightNavIcon(t[0], t[1], t[2]))
+        })
 
         button.forEach((t) => {
-            rightNav.appendChild(rightNavButton(t[0], t[1], t[2]));
+            rightNav.appendChild(rightNavButton(t[0], t[1]));
         })
 
 
