@@ -56,7 +56,7 @@ export class AuthPage {
 
             return authFormSubmit
         }
-        
+
         //FIXME: The layer of the register form is doubled, it become black
         function createAuthRegister() {
             const authFormRegister = document.createElement("div")
