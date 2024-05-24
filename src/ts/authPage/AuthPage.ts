@@ -1,61 +1,75 @@
 export class AuthPage {
 
-
     async createAuthPage(type: string) {
         function createRegForm() {
-            const registerForm = document.createElement("div")
-            registerForm.classList.add("registerForm")
-            return registerForm
+            const authForm = document.createElement("div")
+            authForm.classList.add("authForm")
+            return authForm
         }
 
         function createAuthTitle() {
-            const registerFormTitle = document.createElement("div")
+            const authFormTitle = document.createElement("div")
             if (type === "Login") {
-                registerFormTitle.innerHTML = "Login"
+                authFormTitle.innerHTML = "Login"
             } else {
-                registerFormTitle.innerHTML = "Register"
+                authFormTitle.innerHTML = "Register"
             }
-            registerFormTitle.classList.add("registerForm_Title")
-            return registerFormTitle
+            authFormTitle.classList.add("authForm_Title")
+            return authFormTitle
         }
 
         function createAuthInput(name: string, inputType: string, required: number) {
-            const registerForm_input = document.createElement("input")
-            registerForm_input.type = inputType
-            registerForm_input.name = name
-            registerForm_input.placeholder = name
-            registerForm_input.required = true
-            registerForm_input.classList.add("registerForm_Input")
+            const authFormInput = document.createElement("input")
+            authFormInput.type = inputType
+            authFormInput.name = name
+            authFormInput.placeholder = name
+            authFormInput.required = true
+            authFormInput.classList.add("authForm_Input")
 
             if (required === 0) {
-                registerForm_input.style.display = "none"
+                authFormInput.style.display = "none"
             }
 
-            return registerForm_input
+            return authFormInput
         }
 
         function createAuthButton() {
-            const registerFormSubmit = document.createElement("div")
+            const authFormSubmit = document.createElement("div")
             if (type === "Login") {
-                registerFormSubmit.innerHTML = "Login"
+                authFormSubmit.innerHTML = "Login"
             } else {
-                registerFormSubmit.innerHTML = "Register"
+                authFormSubmit.innerHTML = "Register"
             }
-            registerFormSubmit.classList.add("registerForm_Submit")
+            authFormSubmit.classList.add("authForm_Submit")
 
-            registerFormSubmit.onclick = async () => {
-                const registerForm_Input_collection = document.querySelectorAll(".registerForm_Input") as NodeListOf<HTMLInputElement>
+            authFormSubmit.onclick = async () => {
+                const authFormInput_collection = document.querySelectorAll(".authForm_Input") as NodeListOf<HTMLInputElement>
 
                 const data = {
-                    username: registerForm_Input_collection[0].value,
-                    email: registerForm_Input_collection[1].value,
-                    password: registerForm_Input_collection[2].value,
-                    confirmPassword: registerForm_Input_collection[3].value
+                    username: authFormInput_collection[0].value,
+                    email: authFormInput_collection[1].value,
+                    password: authFormInput_collection[2].value,
+                    confirmPassword: authFormInput_collection[3].value
                 }
                 alert(JSON.stringify(data))
             }
 
-            return registerFormSubmit
+            return authFormSubmit
+        }
+        
+        //FIXME: The layer of the register form is doubled, it become black
+        function createAuthRegister() {
+            const authFormRegister = document.createElement("div")
+            if (type === "Login") {
+                authFormRegister.innerHTML = "No account? Register here."
+            }
+            authFormRegister.classList.add("authForm_Register")
+
+            authFormRegister.onclick = async () => {
+                const authPage = new AuthPage()
+                authPage.createAuthPage("Register")
+            }
+            return authFormRegister
         }
 
         const body = document.body
@@ -79,7 +93,7 @@ export class AuthPage {
                 ["Username", "text", 0],
                 ["Email", "email", 1],
                 ["Password", "password", 1],
-                ["Confirm Password", "password", 0]
+                ["Confirm Password", "password", 0],
             ]
         } else {
             inputObject = [
@@ -90,27 +104,29 @@ export class AuthPage {
             ]
         }
 
-        const registerForm = createRegForm()
+        const authForm = createRegForm()
         const title = createAuthTitle()
-        registerForm.appendChild(title)
+        authForm.appendChild(title)
 
         inputObject.forEach((t) => {
             const input = createAuthInput(t[0], t[1], t[2])
-            registerForm.appendChild(input)
+            authForm.appendChild(input)
         })
 
         const submit = createAuthButton()
 
-        registerForm.appendChild(submit)
+        authForm.appendChild(submit)
 
-        authPage.appendChild(registerForm)
+        const authFormRegister = createAuthRegister()
+        authForm.appendChild(authFormRegister)
+
+        authPage.appendChild(authForm)
 
         body.appendChild(authPage)
 
         this.showAuthPage(authPage)
 
     }
-
 
     async showAuthPage(authPage: HTMLDivElement) {
 

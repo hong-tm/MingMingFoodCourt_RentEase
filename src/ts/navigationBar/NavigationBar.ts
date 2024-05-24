@@ -63,9 +63,10 @@ export class NavigationBar {
             button.classList.add("nav_right_button")
             return button
         }
+        
         const rightNav = document.createElement("div")
 
-        function rightNavIcon(ititle: string, iconClass: string, ifunction: (md: HTMLDivElement) => void){
+        function rightNavIcon(ititle: string, iconClass: string, ifunction: (md: HTMLDivElement) => void) {
             const createMD = new CreateMD()
             const md = createMD.getmd(ititle, iconClass)
             md.onclick = () => ifunction(md)

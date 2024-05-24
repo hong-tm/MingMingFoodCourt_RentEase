@@ -6,7 +6,7 @@ import "../../scss/footer/Footer.scss"
 import "../../scss/meterialDesign/MaterialDesign.scss"
 import { MainPage } from "../mainPage/MainPage"
 import { NavigationBar } from "../navigationBar/NavigationBar"
-import {Footer} from "../footer/Footer"
+import { Footer } from "../footer/Footer"
 
 class Init {
     public init() {
@@ -21,7 +21,6 @@ class Init {
         footer.create()
 
     }
-
 }
 
 const init = new Init()

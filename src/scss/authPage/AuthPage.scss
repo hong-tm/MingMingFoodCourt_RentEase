@@ -23,7 +23,7 @@ $button-radius: 4px;
         z-index: 1000;
     }
 
-    .registerForm {
+    .authForm {
         background-color: white;
         position: relative;
         padding: 32px;
@@ -57,7 +57,7 @@ $button-radius: 4px;
             user-select: none;
             padding: 8px 16px;
             margin-top: 32px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             border: 1px solid #d9d9d9;
             border-radius: $button-radius;
             font-size: 14px;
@@ -71,6 +71,18 @@ $button-radius: 4px;
 
             &:hover {
                 background-color: #2c682c;
+            }
+        }
+
+        &_Register {
+            font-size: 14px;
+            cursor: pointer;
+            color: #38427e;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                color: #2c3268;
+                text-decoration: underline;
             }
         }
     }
