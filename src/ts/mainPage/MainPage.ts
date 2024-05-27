@@ -6,11 +6,11 @@ export class MainPage {
         body.classList.add("body")
 
         const title = document.createElement("div")
-        title.innerHTML = "Hello World"
+        title.innerHTML = "Hello World, Lets Go!"
         title.classList.add("bodyTitle")
-        
+
         body.appendChild(title)
     }
 
-    
+
 }
