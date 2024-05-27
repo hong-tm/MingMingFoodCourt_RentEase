@@ -38,11 +38,12 @@ $font-color: #0d121c;
             padding: $button-padding;
             border-radius: $button-radius;
             margin: 0 5px;
+
+            &:hover {
+                color: black;
+            }
         }
 
-        &_button:hover {
-            color: black;
-        }
     }
 
     &_right {
@@ -65,16 +66,40 @@ $font-color: #0d121c;
             }
         }
 
+        @keyframes shake {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            75% {
+                transform: rotate(-10deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
         &_icon {
             padding: 8 10px;
             border-radius: $button-radius;
             vertical-align: -11.5%;
-            color: #d3d035;
-            font-variation-settings: 'fill' 1'wght' 400, 'GRAD' 0, 'opsz' 48 !important;
+            color: #62682c;
+            transition: color 0.3s, background-color 0.3s;
 
-            &:hover {
-                color: #62682c;
+            &:hover,
+            &:focus {
+                color: #d3d035;
                 background-color: #f9f9f6;
+                animation: shake 0.5s;
             }
         }
     }
